@@ -2,7 +2,7 @@ import straight from '../assets/catpics/straight.jpg';
 import cook from '../assets/catpics/cook.jpg';
 import ball from '../assets/catpics/ball.jpg';
 import july from '../assets/catpics/july.jpg';
-import CatItem from '../components/cats/catItem';
+import CatItem from '../components/cats/CatItem';
 
 export default function Cats() {
   return (
@@ -10,7 +10,7 @@ export default function Cats() {
       <CatItem
         name='Straight'
         pic={straight}
-        desc={'This is Straight! \n She is a good meow!'}
+        desc={'This is Straight!\nShe is a good meow!'}
       />
       <CatItem
         name='Cook'
