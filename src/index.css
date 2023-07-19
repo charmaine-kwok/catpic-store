@@ -23,9 +23,9 @@ a {
   color: #000000;
   text-decoration: inherit;
 }
-/* a:hover {
-  color: #535bf2;
-} */
+a:hover {
+  color: #8e8c8c;
+}
 
 body {
   margin: 0;
@@ -60,11 +60,11 @@ button:focus-visible {
 }
 
 @layer components {
-  .link {
-    @apply text-black;
+  .darkLink {
+    @apply text-white hover:text-[#acabab];
   }
   .picDes {
-    @apply absolute top-[30%] left-3 scale-0 font-medium origin-bottom transition-all duration-300;
+    @apply absolute top-[30%] left-3 scale-0 whitespace-pre-wrap font-medium origin-bottom transition-all duration-300;
   }
 }
 
@@ -73,9 +73,7 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
+
   button {
     background-color: #f9f9f9;
   }
