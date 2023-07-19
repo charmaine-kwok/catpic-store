@@ -59,6 +59,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+A:hover {
+  color: '#acabab';
+}
+
 @layer components {
   .darkLink {
     @apply text-white hover:text-[#acabab];
