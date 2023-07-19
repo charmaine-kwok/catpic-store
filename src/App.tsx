@@ -1,9 +1,10 @@
-import { createSignal, Show } from 'solid-js';
+import { createSignal, lazy, Show } from 'solid-js';
 import { Routes, Route, A } from '@solidjs/router';
 
 import { Moon, Sun, Cat } from './assets/icons/Icons';
 import Home from './pages/Home';
-import Cats from './pages/Cats';
+
+const Cats = lazy(() => import('./pages/Cats'));
 
 function App() {
   const [darkTheme, setDarkTheme] = createSignal(false);
@@ -28,11 +29,21 @@ function App() {
           <div class='pl-4 flex flex-row space-x-4 items-center justify-start w-1/4'>
             <Cat />
             <A href='/' class='justify-center flex'>
-              <p class={`${darkTheme() ? 'text-white' : 'text-black'}`}>Home</p>
+              <p
+                classList={{
+                  darkLink: darkTheme(),
+                }}
+              >
+                Home
+              </p>
             </A>
             <p>
               <A href='/cats' class='justify-center flex'>
-                <p class={`${darkTheme() ? 'text-white' : 'text-black'}`}>
+                <p
+                  classList={{
+                    darkLink: darkTheme(),
+                  }}
+                >
                   Cats
                 </p>
               </A>
@@ -40,16 +51,17 @@ function App() {
           </div>
           <A href='/' class='w-1/2 justify-center flex'>
             <p
-              class={`font-bold text-xl ${
-                darkTheme() ? 'text-white' : 'text-black'
-              }`}
+              class='font-bold text-xl'
+              classList={{
+                darkLink: darkTheme(),
+              }}
             >
               CatPic.
             </p>
           </A>
           <div class='pr-4 w-1/4 flex flex-row space-x-4 items-center justify-end'>
             <p>Cart</p>
-            <div onClick={toggleTheme}>
+            <div onClick={toggleTheme} class='hover:cursor-pointer'>
               <Show when={!darkTheme()} fallback={<Sun />}>
                 <Moon />
               </Show>
@@ -57,12 +69,13 @@ function App() {
           </div>
         </div>
       </div>
-
-      <Routes>
-        <Route path='/' component={Home} />
-        {/* {/* <Route path="/cart" component={} /> */}
-        <Route path='/cats' component={Cats} />
-      </Routes>
+      <div classList={{ 'text-white': darkTheme() }}>
+        <Routes>
+          <Route path='/' component={Home} />
+          {/* {/* <Route path="/cart" component={} /> */}
+          <Route path='/cats' component={Cats} />
+        </Routes>
+      </div>
     </div>
   );
 }
