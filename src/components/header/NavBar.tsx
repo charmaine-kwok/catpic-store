@@ -15,11 +15,9 @@ export default function NavBar(props: {
           Home
         </A>
 
-        <p>
-          <A href='/cats' class='justify-center flex hover:text-[#acabab]'>
-            Cats
-          </A>
-        </p>
+        <A href='/cats' class='justify-center flex hover:text-[#acabab]'>
+          Cats
+        </A>
       </div>
       <A href='/' class='w-1/2 justify-center flex'>
         <p class='font-bold text-xl hover:text-[#acabab]'>CatPic.</p>
