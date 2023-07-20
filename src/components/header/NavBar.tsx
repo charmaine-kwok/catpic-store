@@ -21,8 +21,8 @@ export default function NavBar(props: {
           </A>
         </p>
       </div>
-      <A href='/' class='w-1/2 justify-center flex hover:text-[#acabab]'>
-        <p class='font-bold text-xl'>CatPic.</p>
+      <A href='/' class='w-1/2 justify-center flex'>
+        <p class='font-bold text-xl hover:text-[#acabab]'>CatPic.</p>
       </A>
       <div class='pr-4 w-1/4 flex flex-row space-x-4 items-center justify-end'>
         <p>Cart</p>
