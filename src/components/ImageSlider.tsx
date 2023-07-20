@@ -22,7 +22,7 @@ export default function ImageSlider(props: { slides: any[] }) {
             ❰
           </div>
         </div>
-        <div class='flex items-center justify-center h-[380px] w-[500px]'>
+        <div class='flex items-center justify-center max-h-[380px] max-w-[500px] w-[80vw]'>
           <img
             src={props.slides[slideNum()].pic}
             class='w-full h-full rounded-3xl'
