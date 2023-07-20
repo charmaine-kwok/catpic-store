@@ -6,7 +6,7 @@ export default function Newsletter() {
       <div class='w-full flex justify-center'>
         <input
           type='text'
-          class='py-1 pl-2 w-[40%]'
+          class='py-1 pl-2 w-[40%] min-w-[250px]'
           placeholder='Enter your email here'
         ></input>
       </div>
