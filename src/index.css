@@ -6,6 +6,8 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  max-width: 100%;
+  overflow-x: hidden;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -19,12 +21,7 @@
 }
 
 a {
-  font-weight: 500;
-  color: #000000;
   text-decoration: inherit;
-}
-a:hover {
-  color: #8e8c8c;
 }
 
 body {
@@ -69,6 +66,12 @@ A:hover {
   }
   .picDes {
     @apply absolute top-[30%] left-3 scale-0 whitespace-pre-wrap font-medium origin-bottom transition-all duration-300;
+  }
+  .imageSlider {
+    @apply flex items-center justify-center my-4;
+  }
+  .arrow {
+    @apply flex justify-center items-center mx-4 text-4xl;
   }
 }
 
