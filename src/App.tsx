@@ -15,14 +15,14 @@ function App() {
 
   return (
     <div
-      class='justify-start flex flex-col w-[100vw] h-full'
+      class='justify-start flex flex-col w-full h-full'
       classList={{ 'bg-black': darkTheme(), 'text-white': darkTheme() }}
     >
       <div>
         <Banner />
         <NavBar toggleTheme={toggleTheme} darkTheme={darkTheme()} />
       </div>
-      <div class='h-[100vh]' classList={{ 'text-white': darkTheme() }}>
+      <div class='min-h-[100vh]' classList={{ 'text-white': darkTheme() }}>
         <Routers />
       </div>
       <div
