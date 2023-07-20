@@ -14,7 +14,7 @@ function toTop() {
 
 export default function Footer() {
   return (
-    <div class='grid grid-cols-3 gap-8 p-4'>
+    <div class='grid grid-cols-2 md:grid-cols-3 gap-8 p-4'>
       <div class='flex flex-col p-2'>
         <p class='font-bold text-xl mb-4'>CatPic.</p>
         <p>Our cats may have 9 lives, but their cuteness is infinite.</p>
