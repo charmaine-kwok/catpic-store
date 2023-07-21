@@ -9,7 +9,9 @@ export default function Dot(props: {
       onClick={() => {
         props.goToSlide(props.index);
       }}
-      classList={{ 'opacity-40': props.activeSlide === props.index }}
+      classList={{
+        'brightness-150': props.activeSlide === props.index,
+      }}
     >
       ●
     </div>
