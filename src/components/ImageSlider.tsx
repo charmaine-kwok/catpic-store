@@ -6,20 +6,23 @@ export default function ImageSlider(props: { slides: any[] }) {
   function goToSlide(id: number) {
     setActiveSlide(id);
   }
+  function goToNext() {
+    setActiveSlide((prev) => (prev === props.slides.length - 1 ? 0 : prev + 1));
+  }
+  function goToPrev() {
+    setActiveSlide((prev) => (prev === 0 ? props.slides.length - 1 : prev - 1));
+  }
+
+  setInterval(() => {
+    goToNext();
+  }, 4000);
 
   return (
     <div class='imageSlider flex-col h-full justify-start'>
       <p class='font-bold text-2xl'>{props.slides[activeSlide()].name}</p>
       <div class='imageSlider'>
         <div class='arrow'>
-          <div
-            onClick={() => {
-              setActiveSlide((prev) =>
-                prev === 0 ? props.slides.length - 1 : prev - 1
-              );
-            }}
-            class='cursor-pointer'
-          >
+          <div onClick={() => goToPrev()} class='cursor-pointer'>
             ❰
           </div>
         </div>
@@ -32,9 +35,7 @@ export default function ImageSlider(props: { slides: any[] }) {
         <div class='arrow'>
           <div
             onClick={() => {
-              setActiveSlide((prev) =>
-                prev === props.slides.length - 1 ? 0 : prev + 1
-              );
+              goToNext();
             }}
             class='cursor-pointer'
           >
