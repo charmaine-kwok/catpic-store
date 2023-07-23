@@ -1,15 +1,18 @@
 import { createSignal } from 'solid-js';
 
 export default function ImageSlider(props: { slides: any[] }) {
-  const [activeSlide, setActiveSlide] = createSignal(0);
+  const [isTranslate, setIsTranslate] = createSignal(false);
+  const [isTransition, setIsTransition] = createSignal(true);
+  const [direction, setDirection] = createSignal(true);
 
   function goToNext() {
-    setActiveSlide((prev) => (prev === props.slides.length - 1 ? 0 : prev + 1));
-    // setActiveSlide((prev) => prev + 1);
+    setIsTranslate(true);
+    setDirection(true);
   }
+
   function goToPrev() {
-    setActiveSlide((prev) => (prev === 0 ? props.slides.length - 1 : prev - 1));
-    // setActiveSlide((prev) => prev - 1);
+    setIsTranslate(true);
+    setDirection(false);
   }
 
   let timer = setInterval(() => {
@@ -20,9 +23,29 @@ export default function ImageSlider(props: { slides: any[] }) {
     <div class='imageSlider flex-col h-full w-full justify-start'>
       <div class='overflow-hidden relative imageSlider max-h-[380px] h-[80vh] max-w-[500px] w-[80vw]'>
         <div
-          class={`relative flex translate-x-[${
-            -100 * activeSlide()
-          }%] transition-all duration-700`}
+          onTransitionEnd={() => {
+            direction()
+              ? document
+                  .querySelector('.slider')!
+                  .appendChild(
+                    document.querySelector('.slider')!.firstElementChild
+                  )
+              : document
+                  .querySelector('.slider')!
+                  .prepend(document.querySelector('.slider')!.lastElementChild);
+            setIsTransition(false);
+            setIsTranslate(false);
+            setTimeout(() => setIsTransition(true));
+          }}
+          class={`relative justify-start slider flex
+          -translate-x-[${
+            100 +
+            (isTranslate() && direction() ? 100 : 0) -
+            (isTranslate() && !direction() ? 100 : 0)
+          }%]
+          ${
+            isTransition() ? 'transition-all' : 'transition-none'
+          } duration-1000`}
         >
           {props.slides.map((item) => (
             <img
@@ -39,9 +62,7 @@ export default function ImageSlider(props: { slides: any[] }) {
                 onClick={() => {
                   goToPrev();
                   clearInterval(timer);
-                  setInterval(() => {
-                    goToNext();
-                  }, 4000);
+                  setInterval(() => goToNext(), 4000);
                 }}
                 class='cursor-pointer'
               >
@@ -55,9 +76,7 @@ export default function ImageSlider(props: { slides: any[] }) {
                 onClick={() => {
                   goToNext();
                   clearInterval(timer);
-                  setInterval(() => {
-                    goToNext();
-                  }, 4000);
+                  setInterval(() => goToNext(), 4000);
                 }}
                 class='cursor-pointer'
               >
