@@ -58,7 +58,16 @@ export default function NavBar(props: {
 
       <div class='pr-4 flex flex-row space-x-4'>
         {/* <p>Cart</p> */}
-        <div onClick={() => props.toggleTheme()} class='hover:cursor-pointer'>
+        <div
+          onClick={() => {
+            props.toggleTheme();
+            localStorage.setItem(
+              'lightMode',
+              props.darkTheme ? 'dark' : 'light'
+            );
+          }}
+          class='hover:cursor-pointer'
+        >
           <Show when={!props.darkTheme} fallback={<Sun />}>
             <Moon />
           </Show>
