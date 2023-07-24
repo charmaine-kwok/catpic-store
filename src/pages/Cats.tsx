@@ -10,7 +10,7 @@ export default function Cats() {
       <div class='flex justify-center my-6'>
         <p>Curious about our fabulous felines? Click a cat to learn more!</p>
       </div>
-      <div class='grid grid-cols-2 md:grid-cols-4 gap-4 justify-between px-2 my-4'>
+      <div class='grid grid-cols-2 lg:grid-cols-4 gap-4 justify-between px-2 my-4'>
         <CatItem
           name='Straight'
           pic={straight}
