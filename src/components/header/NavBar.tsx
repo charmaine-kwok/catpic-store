@@ -8,21 +8,19 @@ export default function NavBar(props: {
   darkTheme: boolean;
 }) {
   return (
-    <div class='border-y py-2 justify-between w-[100vw] flex items-center'>
-      <div class='pl-4 flex flex-row space-x-4 items-center justify-start w-1/4'>
-        <Cat />
-        <A href='/' class='justify-center flex hover:text-[#acabab]'>
-          Home
+    <div class='border-y py-2 justify-between w-full flex items-center'>
+      <div class='pl-4 flex flex-row space-x-4 items-center w-1/4'>
+        <A href='/' class='flex flex-row space-x-2 mr-4'>
+          <Cat />
+          <p class='font-bold text-xl hover:text-[#acabab]'>CatPic.</p>
         </A>
 
-        <A href='/cats' class='justify-center flex hover:text-[#acabab]'>
+        <A href='/cats' class='hover:text-[#acabab]'>
           Cats
         </A>
       </div>
-      <A href='/' class='w-1/2 justify-center flex'>
-        <p class='font-bold text-xl hover:text-[#acabab]'>CatPic.</p>
-      </A>
-      <div class='pr-4 w-1/4 flex flex-row space-x-4 items-center justify-end'>
+
+      <div class='pr-4 w-1/4 flex flex-row space-x-4 justify-end'>
         <p>Cart</p>
         <div onClick={() => props.toggleTheme()} class='hover:cursor-pointer'>
           <Show when={!props.darkTheme} fallback={<Sun />}>
