@@ -56,7 +56,7 @@ export default function Footer() {
           </div>
           <div class='flex flex-row space-x-2'>
             <Email />
-            <p>meow@catmail.com</p>
+            <a href='mailto:meow@catmail.com'>meow@catmail.com</a>
           </div>
         </div>
       </div>
