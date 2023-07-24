@@ -68,7 +68,7 @@ A:hover {
     @apply absolute top-[30%] left-3 scale-0 whitespace-pre-wrap font-medium origin-bottom transition-all duration-300;
   }
   .imageSlider {
-    @apply flex items-center justify-center my-4;
+    @apply flex items-center my-4;
   }
   .arrow {
     @apply flex justify-center items-center mx-4 text-4xl;
