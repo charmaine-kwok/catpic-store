@@ -7,11 +7,13 @@ import Footer from './components/Footer';
 import Newsletter from './components/Newsletter';
 
 function App() {
-  const [darkTheme, setDarkTheme] = createSignal(false);
-
   function toggleTheme() {
     setDarkTheme(!darkTheme());
   }
+
+  const [darkTheme, setDarkTheme] = createSignal(
+    localStorage.getItem('lightMode') === 'dark' ? true : false
+  );
 
   return (
     <div
