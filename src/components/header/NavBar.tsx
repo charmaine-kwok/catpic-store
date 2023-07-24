@@ -2,6 +2,8 @@ import { A } from '@solidjs/router';
 import { Show } from 'solid-js';
 import { createSignal } from 'solid-js';
 
+import CatsDropdown from './CatsDropdown';
+import SupDropdown from './SupDropdown';
 import { Cat, Moon, Sun, DownArrow } from '../../assets/icons/Icons';
 
 export default function NavBar(props: {
@@ -31,22 +33,7 @@ export default function NavBar(props: {
               <DownArrow />
             </A>
 
-            {isCatsDropdownVisible() && (
-              <div class='absolute w-[100px] top-full shadow-xl flex flex-col text-black bg-[#f1f1f1] z-[10]'>
-                <A class='dropdown-content' href='/cats/Straight'>
-                  Straight
-                </A>
-                <A class='dropdown-content' href='/cats/Cook'>
-                  Cook
-                </A>
-                <A class='dropdown-content' href='/cats/Ball'>
-                  Ball
-                </A>
-                <A class='dropdown-content' href='/cats/July'>
-                  July
-                </A>
-              </div>
-            )}
+            {isCatsDropdownVisible() && <CatsDropdown />}
           </div>
           <A
             href='https://en.wikipedia.org/wiki/Cat'
@@ -67,22 +54,7 @@ export default function NavBar(props: {
               <DownArrow />
             </A>
 
-            {isSupDropdownVisible() && (
-              <div class='absolute w-[100px] top-full shadow-xl flex flex-col text-black bg-[#f1f1f1] z-[10]'>
-                <A class='dropdown-content' href='https://www.spca.org.hk'>
-                  SPCA
-                </A>
-                <A
-                  class='dropdown-content'
-                  href='https://www.facebook.com/housejoymercy/?locale=zh_HK'
-                >
-                  阿棍屋
-                </A>
-                <A class='dropdown-content' href='https://www.petwithyouhk.com'>
-                  連寵拯救隊
-                </A>
-              </div>
-            )}
+            {isSupDropdownVisible() && <SupDropdown />}
           </div>
         </div>
       </div>
