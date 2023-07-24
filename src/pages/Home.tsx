@@ -9,10 +9,10 @@ export default function Home() {
     pic: string;
     name: string;
   }[] = [
+    { pic: july, name: 'July' },
     { pic: straight, name: 'Straight' },
     { pic: cook, name: 'Cook' },
     { pic: ball, name: 'Ball' },
-    { pic: july, name: 'July' },
   ];
   return (
     <>
