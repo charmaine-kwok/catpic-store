@@ -100,8 +100,8 @@ export function Address() {
       stroke-width='0'
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 320 512'
-      height='25px'
-      width='25px'
+      height='15px'
+      width='15px'
       style='overflow: visible;'
     >
       <path d='M16 144a144 144 0 1 1 288 0 144 144 0 1 1-288 0zm144-64c8.8 0 16-7.2 16-16s-7.2-16-16-16c-53 0-96 43-96 96 0 8.8 7.2 16 16 16s16-7.2 16-16c0-35.3 28.7-64 64-64zm-32 400V317.1a177.984 177.984 0 0 0 64 0V480c0 17.7-14.3 32-32 32s-32-14.3-32-32z'></path>
@@ -116,8 +116,8 @@ export function Phone() {
       stroke-width='0'
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 512 512'
-      height='25px'
-      width='25px'
+      height='15px'
+      width='15px'
       style='overflow: visible;'
     >
       <path d='M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64c0 247.4 200.6 448 448 448 18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368c-70.4-33.3-127.4-90.3-160.7-160.7l49.3-40.3c13.7-11.2 18.4-30 11.6-46.3l-40-96z'></path>
@@ -132,11 +132,43 @@ export function Email() {
       stroke-width='0'
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 1024 1024'
-      height='25px'
-      width='25px'
+      height='15px'
+      width='15px'
       style='overflow: visible;'
     >
       <path d='M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232 512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0 0 68.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z'></path>
+    </svg>
+  );
+}
+
+export function DownArrow() {
+  return (
+    <svg
+      fill='currentColor'
+      stroke-width='0'
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 448 512'
+      height='12px'
+      width='12px'
+      style='overflow: visible;'
+    >
+      <path d='M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z'></path>
+    </svg>
+  );
+}
+
+export function UpArrow() {
+  return (
+    <svg
+      fill='currentColor'
+      stroke-width='0'
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 448 512'
+      height='35px'
+      width='35px'
+      style='overflow: visible;'
+    >
+      <path d='M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z'></path>
     </svg>
   );
 }
