@@ -64,7 +64,7 @@ export default function NavBar(props: {
             >
               <A
                 href='/cats'
-                class=' hover:text-[#acabab] flex flex-row items-center space-x-1'
+                class='hover:text-[#acabab] flex flex-row items-center space-x-1'
               >
                 <p>Cats</p>
                 <DownArrow />
@@ -91,7 +91,6 @@ export default function NavBar(props: {
         </div>
 
         <div class='pr-4 flex flex-row space-x-4'>
-          {/* <p>Cart</p> */}
           <div
             onClick={() => {
               props.toggleTheme();
@@ -109,9 +108,15 @@ export default function NavBar(props: {
         </div>
       </div>
       {isNavDrawer() && (
-        <div class='md:hidden flex flex-col absolute w-full bg-white cursor-pointer shadow-2xl'>
+        <div
+          class='md:hidden flex flex-col absolute w-full cursor-pointer shadow-2xl'
+          classList={{
+            'bg-white': !props.darkTheme,
+            'bg-black': props.darkTheme,
+          }}
+        >
           <div
-            class='flex flex-row items-center p-2 space-x-2 hover:bg-[#ddd]'
+            class='flex flex-row items-center p-2 space-x-2 hover:bg-[#acabab]'
             onClick={() => {
               setShowCatsItems(!showCatsItems());
             }}
@@ -129,7 +134,7 @@ export default function NavBar(props: {
           )}
 
           <div
-            class='flex flex-row items-center p-2 space-x-2 hover:bg-[#ddd]'
+            class='flex flex-row items-center p-2 space-x-2 hover:bg-[#acabab]'
             onClick={() => {
               setShowSupItems(!showSupItems());
             }}
