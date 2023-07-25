@@ -7,18 +7,31 @@ import {
   Phone,
   Email,
 } from '../assets/icons/Icons';
-
-function toTop() {
-  window.scrollTo(0, 0);
-}
+import toTop from './functions/toTop';
 
 export default function Footer() {
   return (
-    <div class='grid grid-cols-2 lg:grid-cols-3 gap-8 p-4'>
-      <div class='flex flex-col p-2'>
-        <p class='font-bold text-xl mb-4'>CatPic.</p>
-        <p>Our cats may have 9 lives, but their cuteness is infinite.</p>
-        <div class='flex flex-row space-x-2 mt-2'>
+    <div class='py-4'>
+      <div class='flex flex-col items-center text-center justify-center'>
+        <p class='font-bold italic text-xl my-4'>
+          Our cats may have 9 lives, but their cuteness is infinite.
+        </p>
+        <p class='font-bold text-xl my-8'>Contact Us</p>
+        <div class='footer-contact-item mb-2'>
+          <Address />
+          <p>Purrfect Place, Cat City, Canada</p>
+        </div>
+        <div class='flex flex-row divide-x divide-current'>
+          <div class='footer-contact-item'>
+            <Phone />
+            <p>555-CAT-PURR</p>
+          </div>
+          <div class='footer-contact-item'>
+            <Email />
+            <a href='mailto:meow@catmail.com'>meow@catmail.com</a>
+          </div>
+        </div>
+        <div class='my-4 flex flex-row space-x-2'>
           <div class='bg-blue-500 rounded-full p-2'>
             <Facebook />
           </div>
@@ -28,37 +41,51 @@ export default function Footer() {
         </div>
       </div>
 
-      <div class='flex flex-col p-2'>
-        <p class='font-bold text-xl mb-4'>Useful Links</p>
-        <div class='flex flex-col space-y-2'>
-          <A href='/' onClick={() => toTop()}>
-            <p>Home</p>
-          </A>
-          <A href='/cats' onClick={() => toTop()}>
-            <p>Cats</p>
-          </A>
-          <A href='https://en.wikipedia.org/wiki/Cat'>
-            <p>About Cat</p>
-          </A>
+      <div class='flex flex-row justify-center'>
+        <div class='grid grid-cols-2 gap-8 p-4 '>
+          <div class='flex flex-col p-2 space-y-1'>
+            <p class='font-bold text-xl mb-4 border-b-2 pb-2 w-[180px]'>Cats</p>
+            <A href='/cats' onClick={toTop}>
+              Our Cats
+            </A>
+            <A href='/cats/Straight' onClick={toTop}>
+              Straight
+            </A>
+            <A href='/cats/Cook' onClick={toTop}>
+              Cook
+            </A>
+            <A href='/cats/Ball' onClick={toTop}>
+              Ball
+            </A>
+            <A href='/cats/July' onClick={toTop}>
+              July
+            </A>
+            <A
+              href='https://en.wikipedia.org/wiki/Cat'
+              // class='hover:text-[#acabab]'
+            >
+              About Cats
+            </A>
+          </div>
+
+          <div class='flex flex-col p-2'>
+            <p class='font-bold text-xl mb-4 border-b-2 pb-2 w-[180px]'>
+              Support Cats
+            </p>
+            <div class='flex flex-col space-y-1'>
+              <A href='https://www.spca.org.hk'>SPCA</A>
+              <A href='https://www.facebook.com/housejoymercy/?locale=zh_HK'>
+                阿棍屋
+              </A>
+              <A href='https://www.petwithyouhk.com'>連寵拯救隊</A>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class='flex flex-col p-2'>
-        <p class='font-bold text-xl mb-4'>Contact Us</p>
-        <div class='flex flex-col space-y-2'>
-          <div class='flex flex-row space-x-2'>
-            <Address />
-            <p>Purrfect Place, Cat City, Canada</p>
-          </div>
-          <div class='flex flex-row space-x-2'>
-            <Phone />
-            <p>555-CAT-PURR</p>
-          </div>
-          <div class='flex flex-row space-x-2'>
-            <Email />
-            <a href='mailto:meow@catmail.com'>meow@catmail.com</a>
-          </div>
-        </div>
+      <div class='flex md:justify-end justify-center md:pr-8 pr-0'>
+        <p>
+          Copyright @ {new Date().getFullYear()} C.Kwok. All rights reserved.
+        </p>
       </div>
     </div>
   );
