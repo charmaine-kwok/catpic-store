@@ -18,6 +18,9 @@ export default function CatsDropdown() {
       <A class='dropdown-content' href='/cats/July'>
         July
       </A>
+      <A class='dropdown-content' href='https://en.wikipedia.org/wiki/Cat'>
+        About Cats
+      </A>
     </div>
   );
 }
