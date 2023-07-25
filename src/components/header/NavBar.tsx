@@ -1,6 +1,5 @@
 import { A } from '@solidjs/router';
-import { Show } from 'solid-js';
-import { createSignal } from 'solid-js';
+import { createSignal, Show, onCleanup } from 'solid-js';
 
 import SupDropdown, { SupDropdownContent } from './SupDropdown';
 import CatsDropdown, { CatsDropdownContent } from './CatsDropdown';
@@ -11,6 +10,7 @@ import {
   DownArrow,
   Menu,
   Close,
+  UpArrow,
 } from '../../assets/icons/Icons';
 
 export default function NavBar(props: {
@@ -22,6 +22,20 @@ export default function NavBar(props: {
   const [isNavDrawer, setIsNavDrawer] = createSignal(false);
   const [showCatsItems, setShowCatsItems] = createSignal(false);
   const [showSupItems, setShowSupItems] = createSignal(false);
+
+  function clickOutside(el: Element) {
+    const onClick = (e: Event) => {
+      if (!el.contains(e.target as Node)) {
+        closeMenu();
+      }
+    };
+
+    document.body.addEventListener('click', onClick);
+
+    onCleanup(() => {
+      document.body.removeEventListener('click', onClick);
+    });
+  }
 
   function closeMenu() {
     setShowCatsItems(false);
@@ -37,7 +51,7 @@ export default function NavBar(props: {
       >
         <div class='pl-4 flex flex-row space-x-4 items-center'>
           <div class='md:hidden flex'>
-            <p
+            <div
               class='opacity-100 mr-4 cursor-pointer'
               onClick={() => {
                 if (isNavDrawer()) {
@@ -47,14 +61,16 @@ export default function NavBar(props: {
                 }
               }}
             >
-              <Show when={isNavDrawer()} fallback={<Menu />}>
-                <Close />
-              </Show>
-            </p>
+              <div>
+                <Show when={isNavDrawer()} fallback={<Menu />}>
+                  <Close />
+                </Show>
+              </div>
+            </div>
           </div>
           <A href='/' class='flex flex-row space-x-2 pr-4'>
             <Cat />
-            <p class='font-bold text-xl hover:text-[#acabab]'>CatPic.</p>
+            <p class='font-bold text-xl md:hover:text-[#acabab]'>CatPic.</p>
           </A>
           <div class='md:flex hidden flex-row space-x-8'>
             <div
@@ -67,7 +83,9 @@ export default function NavBar(props: {
                 class='hover:text-[#acabab] flex flex-row items-center space-x-1'
               >
                 <p>Cats</p>
-                <DownArrow />
+                <Show when={isCatsDropdownVisible()} fallback={<DownArrow />}>
+                  <UpArrow size={12} />
+                </Show>
               </A>
 
               {isCatsDropdownVisible() && <CatsDropdown />}
@@ -82,7 +100,9 @@ export default function NavBar(props: {
                 class=' hover:text-[#acabab] flex flex-row items-center space-x-1'
               >
                 <p> Support Cats</p>
-                <DownArrow />
+                <Show when={isSupDropdownVisible()} fallback={<DownArrow />}>
+                  <UpArrow size={12} />
+                </Show>
               </A>
 
               {isSupDropdownVisible() && <SupDropdown />}
@@ -109,6 +129,8 @@ export default function NavBar(props: {
       </div>
       {isNavDrawer() && (
         <div
+          use:clickOutside
+          id='navDrawer'
           class='md:hidden flex flex-col absolute w-full cursor-pointer shadow-2xl'
           classList={{
             'bg-white': !props.darkTheme,
@@ -116,13 +138,16 @@ export default function NavBar(props: {
           }}
         >
           <div
-            class='flex flex-row items-center p-2 space-x-2 hover:bg-[#acabab]'
+            class='flex flex-row items-center p-2 space-x-2'
+            classList={{ 'bg-[#acabab]': showCatsItems() }}
             onClick={() => {
               setShowCatsItems(!showCatsItems());
             }}
           >
             <p>Cats</p>
-            <DownArrow />
+            <Show when={showCatsItems()} fallback={<DownArrow />}>
+              <UpArrow size={12} />
+            </Show>
           </div>
           {showCatsItems() && (
             <div
@@ -134,13 +159,16 @@ export default function NavBar(props: {
           )}
 
           <div
-            class='flex flex-row items-center p-2 space-x-2 hover:bg-[#acabab]'
+            class='flex flex-row items-center p-2 space-x-2'
+            classList={{ 'bg-[#acabab]': showSupItems() }}
             onClick={() => {
               setShowSupItems(!showSupItems());
             }}
           >
             <p>Support Cats</p>
-            <DownArrow />
+            <Show when={showSupItems()} fallback={<DownArrow />}>
+              <UpArrow size={12} />
+            </Show>
           </div>
           {showSupItems() && (
             <div class='pl-6 flex flex-col font-medium'>
