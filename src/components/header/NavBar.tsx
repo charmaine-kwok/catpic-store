@@ -51,12 +51,6 @@ export default function NavBar(props: {
 
               {isCatsDropdownVisible() && <CatsDropdown />}
             </div>
-            <A
-              href='https://en.wikipedia.org/wiki/Cat'
-              class='hover:text-[#acabab]'
-            >
-              About Cats
-            </A>
             <div
               class='relative'
               onMouseEnter={() => setIsSupDropdownVisible(true)}
@@ -97,10 +91,6 @@ export default function NavBar(props: {
         <div class='md:hidden flex flex-col absolute z-[10px] w-full bg-white cursor-pointer shadow-2xl'>
           <div class='flex flex-row items-center p-2 space-x-2 hover:bg-[#ddd]'>
             <p>Cats</p>
-            <DownArrow />
-          </div>
-          <div class='flex flex-row items-center p-2 space-x-2 hover:bg-[#ddd]'>
-            <p>About Cats</p>
             <DownArrow />
           </div>
           <div class='flex flex-row items-center p-2 space-x-2 hover:bg-[#ddd]'>
