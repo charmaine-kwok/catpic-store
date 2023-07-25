@@ -44,20 +44,22 @@ export default function Footer() {
       <div class='flex flex-row justify-center'>
         <div class='grid grid-cols-2 gap-8 p-4 '>
           <div class='flex flex-col p-2 space-y-1'>
-            <p class='font-bold text-xl mb-4 border-b-2 pb-2 w-[180px]'>Cats</p>
-            <A href='/cats' onClick={toTop}>
+            <p class='font-bold text-xl mb-4 border-b-2 border-current pb-2 w-[180px]'>
+              Cats
+            </p>
+            <A href='/cats' onClick={toTop} class='hover:underline'>
               Our Cats
             </A>
-            <A href='/cats/Straight' onClick={toTop}>
+            <A href='/cats/Straight' onClick={toTop} class='hover:underline'>
               Straight
             </A>
-            <A href='/cats/Cook' onClick={toTop}>
+            <A href='/cats/Cook' onClick={toTop} class='hover:underline'>
               Cook
             </A>
-            <A href='/cats/Ball' onClick={toTop}>
+            <A href='/cats/Ball' onClick={toTop} class='hover:underline'>
               Ball
             </A>
-            <A href='/cats/July' onClick={toTop}>
+            <A href='/cats/July' onClick={toTop} class='hover:underline'>
               July
             </A>
             <A
@@ -69,15 +71,31 @@ export default function Footer() {
           </div>
 
           <div class='flex flex-col p-2'>
-            <p class='font-bold text-xl mb-4 border-b-2 pb-2 w-[180px]'>
+            <p class='font-bold text-xl mb-4 border-b-2 border-current pb-2 w-[180px]'>
               Support Cats
             </p>
             <div class='flex flex-col space-y-1'>
-              <A href='https://www.spca.org.hk'>SPCA</A>
-              <A href='https://www.facebook.com/housejoymercy/?locale=zh_HK'>
+              <A
+                href='https://www.spca.org.hk'
+                onClick={toTop}
+                class='hover:underline'
+              >
+                SPCA
+              </A>
+              <A
+                href='https://www.facebook.com/housejoymercy/?locale=zh_HK'
+                onClick={toTop}
+                class='hover:underline'
+              >
                 阿棍屋
               </A>
-              <A href='https://www.petwithyouhk.com'>連寵拯救隊</A>
+              <A
+                href='https://www.petwithyouhk.com'
+                onClick={toTop}
+                class='hover:underline'
+              >
+                連寵拯救隊
+              </A>
             </div>
           </div>
         </div>
