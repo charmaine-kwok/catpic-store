@@ -6,7 +6,7 @@ export default function CatDetails(props: {
   desc: JSX.Element;
 }) {
   return (
-    <div class='grid grid-cols-1 lg:grid-cols-2 justify-center items-center h-full'>
+    <div class='grid grid-cols-1 md:grid-cols-2 justify-center items-center h-full'>
       <div class='p-8'>
         <img src={props.pic} />
       </div>
