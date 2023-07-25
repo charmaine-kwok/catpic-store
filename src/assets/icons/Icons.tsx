@@ -172,3 +172,22 @@ export function UpArrow() {
     </svg>
   );
 }
+
+export function Menu() {
+  return (
+    <svg
+      fill='#000000'
+      stroke-width='2'
+      xmlns='http://www.w3.org/2000/svg'
+      stroke='currentColor'
+      stroke-linecap='round'
+      stroke-linejoin='round'
+      viewBox='0 0 24 24'
+      height='20px'
+      width='20px'
+      style='overflow: visible;'
+    >
+      <path d='M3 12h18M3 6h18M3 18h18'></path>
+    </svg>
+  );
+}
