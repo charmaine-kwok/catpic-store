@@ -2,9 +2,16 @@ import { A } from '@solidjs/router';
 import { Show } from 'solid-js';
 import { createSignal } from 'solid-js';
 
-import CatsDropdown from './CatsDropdown';
-import SupDropdown from './SupDropdown';
-import { Cat, Moon, Sun, DownArrow, Menu } from '../../assets/icons/Icons';
+import SupDropdown, { SupDropdownContent } from './SupDropdown';
+import CatsDropdown, { CatsDropdownContent } from './CatsDropdown';
+import {
+  Cat,
+  Moon,
+  Sun,
+  DownArrow,
+  Menu,
+  Close,
+} from '../../assets/icons/Icons';
 
 export default function NavBar(props: {
   toggleTheme: () => void;
@@ -13,6 +20,14 @@ export default function NavBar(props: {
   const [isCatsDropdownVisible, setIsCatsDropdownVisible] = createSignal(false);
   const [isSupDropdownVisible, setIsSupDropdownVisible] = createSignal(false);
   const [isNavDrawer, setIsNavDrawer] = createSignal(false);
+  const [showCatsItems, setShowCatsItems] = createSignal(false);
+  const [showSupItems, setShowSupItems] = createSignal(false);
+
+  function closeMenu() {
+    setShowCatsItems(false);
+    setShowSupItems(false);
+    setIsNavDrawer(!isNavDrawer());
+  }
   return (
     <>
       <div
@@ -25,10 +40,16 @@ export default function NavBar(props: {
             <p
               class='opacity-100 mr-4 cursor-pointer'
               onClick={() => {
-                setIsNavDrawer(!isNavDrawer());
+                if (isNavDrawer()) {
+                  closeMenu();
+                } else {
+                  setIsNavDrawer(!isNavDrawer());
+                }
               }}
             >
-              <Menu />
+              <Show when={isNavDrawer()} fallback={<Menu />}>
+                <Close />
+              </Show>
             </p>
           </div>
           <A href='/' class='flex flex-row space-x-2 pr-4'>
@@ -88,15 +109,39 @@ export default function NavBar(props: {
         </div>
       </div>
       {isNavDrawer() && (
-        <div class='md:hidden flex flex-col absolute z-[10px] w-full bg-white cursor-pointer shadow-2xl'>
-          <div class='flex flex-row items-center p-2 space-x-2 hover:bg-[#ddd]'>
+        <div class='md:hidden flex flex-col absolute w-full bg-white cursor-pointer shadow-2xl'>
+          <div
+            class='flex flex-row items-center p-2 space-x-2 hover:bg-[#ddd]'
+            onClick={() => {
+              setShowCatsItems(!showCatsItems());
+            }}
+          >
             <p>Cats</p>
             <DownArrow />
           </div>
-          <div class='flex flex-row items-center p-2 space-x-2 hover:bg-[#ddd]'>
+          {showCatsItems() && (
+            <div
+              class='pl-6 flex flex-col font-medium'
+              onClick={() => closeMenu()}
+            >
+              <CatsDropdownContent />
+            </div>
+          )}
+
+          <div
+            class='flex flex-row items-center p-2 space-x-2 hover:bg-[#ddd]'
+            onClick={() => {
+              setShowSupItems(!showSupItems());
+            }}
+          >
             <p>Support Cats</p>
             <DownArrow />
           </div>
+          {showSupItems() && (
+            <div class='pl-6 flex flex-col font-medium'>
+              <SupDropdownContent />
+            </div>
+          )}
         </div>
       )}
     </>
