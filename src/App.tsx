@@ -1,7 +1,6 @@
 import { createSignal, createEffect } from 'solid-js';
 
 import Routers from './components/Routers';
-import Banner from './components/header/Banner';
 import NavBar from './components/header/NavBar';
 import Footer from './components/Footer';
 import Newsletter from './components/Newsletter';
@@ -30,11 +29,13 @@ function App() {
       class='justify-start flex flex-col w-[100vw] h-full'
       classList={{ 'bg-black': darkTheme(), 'text-white': darkTheme() }}
     >
-      <Banner />
-      <div classList={{ 'fixed top-0 w-full z-[10]': toTopButton() }}>
+      <div class='fixed top-0 w-full z-[10]'>
         <NavBar toggleTheme={toggleTheme} darkTheme={darkTheme()} />
       </div>
-      <div class='min-h-[100vh]' classList={{ 'text-white': darkTheme() }}>
+      <div
+        class='min-h-[100vh] pt-[45px]'
+        classList={{ 'text-white': darkTheme() }}
+      >
         <Routers />
       </div>
       <div
