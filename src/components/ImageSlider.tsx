@@ -1,4 +1,4 @@
-import { createSignal } from 'solid-js';
+import { createSignal, For } from 'solid-js';
 
 export default function ImageSlider(props: { slides: any[] }) {
   const [isTranslate, setIsTranslate] = createSignal(false);
@@ -41,40 +41,31 @@ export default function ImageSlider(props: { slides: any[] }) {
               timer = setInterval(goToNext, 4000);
             }, 4000);
           }}
-          class={`relative justify-start slider flex duration-1000
-          -translate-x-[${
-            100 +
-            (isTranslate() && direction() ? 100 : 0) -
-            (isTranslate() && !direction() ? 100 : 0)
-          }%]
-          ${isTransition() ? 'transition-all' : 'transition-none'} `}
+          class={`relative justify-start slider flex duration-1000 -translate-x-[100%]
+          ${isTransition() ? 'transition-all' : 'transition-none'}`}
+          classList={{
+            '-translate-x-[200%]': isTranslate() && direction(),
+            'translate-x-0': isTranslate() && !direction(),
+          }}
         >
-          {props.slides.map((item) => (
-            <img
-              src={item.pic}
-              class='min-w-full min-h-full rounded-3xl object-cover'
-            />
-          ))}
+          <For each={props.slides}>
+            {(item) => (
+              <img
+                src={item.pic}
+                class='min-w-full min-h-full rounded-3xl object-cover'
+              />
+            )}
+          </For>
         </div>
         <div class='absolute flex justify-between items-center w-full h-full text-white'>
           <div class='arrow text-6xl bg-[rgb(0,0,0,0.3)] p-1'>
-            <div
-              onClick={() => {
-                goToPrev();
-              }}
-              class='cursor-pointer'
-            >
+            <div onClick={() => goToPrev()} class='cursor-pointer'>
               ❰
             </div>
           </div>
 
           <div class='arrow text-6xl bg-[rgb(0,0,0,0.3)] p-1'>
-            <div
-              onClick={() => {
-                goToNext();
-              }}
-              class='cursor-pointer'
-            >
+            <div onClick={() => goToNext()} class='cursor-pointer'>
               ❱
             </div>
           </div>
