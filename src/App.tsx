@@ -27,27 +27,26 @@ function App() {
   });
   return (
     <div
-      class='justify-start flex flex-col w-full h-full'
+      class='justify-start flex flex-col w-[100vw] h-full'
       classList={{ 'bg-black': darkTheme(), 'text-white': darkTheme() }}
     >
       <Banner />
       <div classList={{ 'fixed top-0 w-full z-[10]': toTopButton() }}>
         <NavBar toggleTheme={toggleTheme} darkTheme={darkTheme()} />
       </div>
-      <div
-        class='min-h-[100vh] pt-20'
-        classList={{ 'text-white': darkTheme() }}
-      >
+      <div class='min-h-[100vh]' classList={{ 'text-white': darkTheme() }}>
         <Routers />
       </div>
       <div
-        class={`flex flex-col items-center justify-center space-y-4 py-8 my-4 ${
+        class={`flex flex-col items-center justify-center space-y-4 py-8 ${
           !darkTheme() ? 'bg-yellow-100' : 'bg-blue-600'
         }`}
       >
         <Newsletter />
       </div>
-      <Footer />
+      <div class={`bg-slate-${darkTheme() ? 700 : 300}`}>
+        <Footer />
+      </div>
       {toTopButton() && <ToTopButton darkTheme={darkTheme()} />}
     </div>
   );
