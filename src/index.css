@@ -74,7 +74,7 @@ A:hover {
     @apply flex justify-center items-center mx-4 text-4xl;
   }
   .dropdown-content {
-    @apply py-1 pl-2 hover:bg-[#ddd];
+    @apply py-1 pl-2 hover:bg-[#9e9c9c];
   }
   .footer-contact-item {
     @apply flex flex-row items-center px-4 space-x-2;
