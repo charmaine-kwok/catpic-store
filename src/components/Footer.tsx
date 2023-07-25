@@ -62,10 +62,7 @@ export default function Footer() {
             <A href='/cats/July' onClick={toTop} class='hover:underline'>
               July
             </A>
-            <A
-              href='https://en.wikipedia.org/wiki/Cat'
-              // class='hover:text-[#acabab]'
-            >
+            <A href='https://en.wikipedia.org/wiki/Cat' class='hover:underline'>
               About Cats
             </A>
           </div>
@@ -75,25 +72,16 @@ export default function Footer() {
               Support Cats
             </p>
             <div class='flex flex-col space-y-1'>
-              <A
-                href='https://www.spca.org.hk'
-                onClick={toTop}
-                class='hover:underline'
-              >
+              <A href='https://www.spca.org.hk' class='hover:underline'>
                 SPCA
               </A>
               <A
                 href='https://www.facebook.com/housejoymercy/?locale=zh_HK'
-                onClick={toTop}
                 class='hover:underline'
               >
                 阿棍屋
               </A>
-              <A
-                href='https://www.petwithyouhk.com'
-                onClick={toTop}
-                class='hover:underline'
-              >
+              <A href='https://www.petwithyouhk.com' class='hover:underline'>
                 連寵拯救隊
               </A>
             </div>
