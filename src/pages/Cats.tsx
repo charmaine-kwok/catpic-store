@@ -7,7 +7,7 @@ import CatItem from '../components/cats/CatItem';
 export default function Cats() {
   return (
     <>
-      <div class='flex justify-center my-6'>
+      <div class='flex text-center my-6'>
         <p>Curious about our fabulous felines? Click a cat to learn more!</p>
       </div>
       <div class='grid grid-cols-2 lg:grid-cols-4 gap-4 justify-between px-2 my-4'>
