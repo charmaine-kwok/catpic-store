@@ -76,6 +76,9 @@ A:hover {
   .dropdown-content {
     @apply py-1 pl-2 hover:bg-[#ddd];
   }
+  .footer-contact-item {
+    @apply flex flex-row items-center px-4 space-x-2;
+  }
 }
 
 @media (prefers-color-scheme: light) {
