@@ -13,6 +13,14 @@ import {
   UpArrow,
 } from '../../assets/icons/Icons';
 
+declare module 'solid-js/jsx-runtime' {
+  namespace JSX {
+    interface Directives {
+      clickOutside: any;
+    }
+  }
+}
+
 export default function NavBar(props: {
   toggleTheme: () => void;
   darkTheme: boolean;
