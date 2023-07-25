@@ -28,7 +28,12 @@ export default function Footer() {
           </div>
           <div class='footer-contact-item'>
             <Email />
-            <a href='mailto:meow@catmail.com'>meow@catmail.com</a>
+            <a
+              href='mailto:meow@catmail.com'
+              class='hover:text-blue-500 hover:underline'
+            >
+              meow@catmail.com
+            </a>
           </div>
         </div>
         <div class='my-4 flex flex-row space-x-2'>
@@ -90,7 +95,7 @@ export default function Footer() {
       </div>
       <div class='flex md:justify-end justify-center md:pr-8 pr-0'>
         <p>
-          Copyright @ {new Date().getFullYear()} C.Kwok. All rights reserved.
+          Copyright @ {new Date().getFullYear()} C. Kwok. All rights reserved.
         </p>
       </div>
     </div>
