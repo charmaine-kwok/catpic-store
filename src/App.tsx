@@ -18,7 +18,7 @@ function App() {
   const [toTopButton, setToTopButton] = createSignal(false);
   createEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 35) {
+      if (window.scrollY > 30) {
         setToTopButton(true);
       } else {
         setToTopButton(false);
@@ -30,11 +30,14 @@ function App() {
       class='justify-start flex flex-col w-full h-full'
       classList={{ 'bg-black': darkTheme(), 'text-white': darkTheme() }}
     >
-      <div>
-        <Banner />
+      <Banner />
+      <div classList={{ 'fixed top-0 w-full z-[10]': toTopButton() }}>
         <NavBar toggleTheme={toggleTheme} darkTheme={darkTheme()} />
       </div>
-      <div class='min-h-[100vh]' classList={{ 'text-white': darkTheme() }}>
+      <div
+        class='min-h-[100vh] pt-20'
+        classList={{ 'text-white': darkTheme() }}
+      >
         <Routers />
       </div>
       <div
