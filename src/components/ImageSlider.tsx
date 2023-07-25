@@ -26,12 +26,14 @@ export default function ImageSlider(props: { slides: any[] }) {
               document
                 .querySelector('.slider')!
                 .appendChild(
-                  document.querySelector('.slider')!.firstElementChild
+                  document.querySelector('.slider')!.firstElementChild as Node
                 );
             } else {
               document
                 .querySelector('.slider')!
-                .prepend(document.querySelector('.slider')!.lastElementChild);
+                .prepend(
+                  document.querySelector('.slider')!.lastElementChild as Node
+                );
             }
             setIsTransition(false);
             setIsTranslate(false);
