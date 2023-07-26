@@ -11,7 +11,7 @@ export default function Cats() {
         <p>Curious about our fabulous felines? Click a cat to learn more!</p>
       </div>
 
-      <div class='grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-[90%]'>
+      <div class='grid grid-cols-2 lg:grid-cols-4 gap-4 w-[90%]'>
         <CatItem
           name='Straight'
           pic={straight}
