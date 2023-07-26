@@ -1,5 +1,7 @@
 import { createSignal, For } from 'solid-js';
 
+import ImageSliderArrows from './ImageSliderArrows';
+
 export default function ImageSlider(props: { slides: any[] }) {
   const [isTranslate, setIsTranslate] = createSignal(false);
   const [isTransition, setIsTransition] = createSignal(true);
@@ -59,19 +61,10 @@ export default function ImageSlider(props: { slides: any[] }) {
             )}
           </For>
         </div>
-        <div class='absolute flex justify-between items-center w-full h-full text-white'>
-          <div class='arrow text-6xl bg-[rgb(0,0,0,0.3)] p-1'>
-            <div onClick={() => goToPrev()} class='cursor-pointer'>
-              ❰
-            </div>
-          </div>
-
-          <div class='arrow text-6xl bg-[rgb(0,0,0,0.3)] p-1'>
-            <div onClick={() => goToNext()} class='cursor-pointer'>
-              ❱
-            </div>
-          </div>
-        </div>
+        <ImageSliderArrows
+          gotoPrev={() => goToPrev()}
+          goToNext={() => goToNext()}
+        />
       </div>
     </div>
   );
