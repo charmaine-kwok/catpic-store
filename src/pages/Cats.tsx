@@ -6,11 +6,12 @@ import CatItem from '../components/cats/CatItem';
 
 export default function Cats() {
   return (
-    <>
-      <div class='flex justify-center text-center my-6'>
+    <div class='flex flex-col items-center'>
+      <div class='flex text-center my-6 px-4'>
         <p>Curious about our fabulous felines? Click a cat to learn more!</p>
       </div>
-      <div class='grid grid-cols-2 lg:grid-cols-4 gap-4 justify-between px-2 my-4'>
+
+      <div class='grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-[90%]'>
         <CatItem
           name='Straight'
           pic={straight}
@@ -24,6 +25,6 @@ export default function Cats() {
         <CatItem name='Ball' pic={ball} desc={'This is Ball.'} />
         <CatItem name='July' pic={july} desc={'This is July.'} />
       </div>
-    </>
+    </div>
   );
 }
