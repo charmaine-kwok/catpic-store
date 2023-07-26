@@ -81,6 +81,9 @@ A:hover {
   .footer-contact-item {
     @apply flex flex-row items-center px-4 space-x-2;
   }
+  .navBar-item {
+    @apply flex flex-row items-center space-x-1 hover:text-[#acabab];
+  }
 }
 
 @media (prefers-color-scheme: light) {
