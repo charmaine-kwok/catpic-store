@@ -15,7 +15,7 @@ export default function CatDetails(props: {
           alt={`Picture of ${props.catName}`}
         />
       </div>
-      <div class='p-8 h-full flex flex-col justify-center'>
+      <div class='md:p-8 px-8 h-full flex flex-col justify-center'>
         <p class='font-bold mb-2'>{props.heading}</p>
         {props.desc}
       </div>
