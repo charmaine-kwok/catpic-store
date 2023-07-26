@@ -2,7 +2,12 @@ import { createSignal, For } from 'solid-js';
 
 import ImageSliderArrows from './ImageSliderArrows';
 
-export default function ImageSlider(props: { slides: any[] }) {
+export default function ImageSlider(props: {
+  slides: {
+    pic: string;
+    name: string;
+  }[];
+}) {
   const [isTranslate, setIsTranslate] = createSignal(false);
   const [isTransition, setIsTransition] = createSignal(true);
   const [direction, setDirection] = createSignal(true);
@@ -56,7 +61,8 @@ export default function ImageSlider(props: { slides: any[] }) {
             {(item) => (
               <img
                 src={item.pic}
-                class='min-w-full min-h-full rounded-3xl object-cover'
+                class='w-[100%] h-[100%] rounded-3xl object-cover'
+                alt={`Picture of ${item.name}`}
               />
             )}
           </For>
