@@ -1,7 +1,7 @@
 import { createSignal, createEffect } from 'solid-js';
 
 import Routers from './components/Routers';
-import NavBar from './components/header/NavBar';
+import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer';
 import Newsletter from './components/Newsletter';
 import ToTopButton from './components/ToTopButton';
