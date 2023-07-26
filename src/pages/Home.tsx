@@ -2,7 +2,7 @@ import straight from '../assets/catpics/straight.jpg';
 import cook from '../assets/catpics/cook.jpg';
 import ball from '../assets/catpics/ball.jpg';
 import july from '../assets/catpics/july.jpg';
-import ImageSlider from '../components/ImageSlider';
+import ImageSlider from '../components/imageSlider/ImageSlider';
 
 export default function Home() {
   const slides: {
