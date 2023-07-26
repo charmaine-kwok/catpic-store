@@ -37,6 +37,7 @@ export default function Cook() {
           </p>
         </>
       }
+      catName='Cook'
     />
   );
 }

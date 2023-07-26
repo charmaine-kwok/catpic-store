@@ -43,6 +43,7 @@ export default function July() {
           </p>
         </>
       }
+      catName='July'
     />
   );
 }

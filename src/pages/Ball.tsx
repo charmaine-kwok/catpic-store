@@ -38,6 +38,7 @@ export default function Ball() {
           </p>
         </>
       }
+      catName='Ball'
     />
   );
 }
