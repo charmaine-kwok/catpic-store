@@ -1,28 +1,34 @@
+# Catpic-Store
+
+Catpic-Store is a simple website that showcases pictures of cats. It was built using [SolidJS](https://www.solidjs.com) and [Tailwind CSS](https://tailwindcss.com). The website is deployed on [Vercel](https://vercel.com).
+
 ## Usage
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+To use Catpic-Store locally, please follow these steps:
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+1. Clone the repository:
 
-## Available Scripts
+   ```bash
+   git clone \
+   https://github.com/charmaine-kwok/catpic-store.git
+   ```
 
-In the project directory, you can run:
+2. Install dependencies:
 
-### `npm run dev`
+   ```bash
+   pnpm install # or npm install or yarn install
+   ```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+3. Run the development server:
 
-### `npm run build`
+   ```bash
+   pnpm run dev
+   ```
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
 ## Deployment
 
-Learn more about deploying your application with the [documentations](https://vitejs.dev/guide/static-deploy.html)
+Catpic-Store is deployed on Vercel.
+
+To access the catpic-store website, you can visit the repository's URL: [catpic-store](https://catpic-store.vercel.app).
