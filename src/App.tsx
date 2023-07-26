@@ -33,7 +33,7 @@ function App() {
         <NavBar toggleTheme={toggleTheme} darkTheme={darkTheme()} />
       </div>
       <div
-        class='min-h-[100vh] pt-[45px]'
+        class='min-h-[100vh] mt-[45px]'
         classList={{ 'text-white': darkTheme() }}
       >
         <Routers />
