@@ -1,3 +1,3 @@
-const toTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+const toTop = () => window.scrollTo({ top: -45, behavior: 'smooth' });
 
 export default toTop;
