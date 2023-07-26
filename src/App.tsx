@@ -39,7 +39,7 @@ function App() {
         <Routers />
       </div>
       <div
-        class={`flex flex-col items-center justify-center space-y-4 py-8 ${
+        class={`flex flex-col items-center justify-center space-y-4 my-10 py-8 ${
           !darkTheme() ? 'bg-yellow-100' : 'bg-blue-600'
         }`}
       >
