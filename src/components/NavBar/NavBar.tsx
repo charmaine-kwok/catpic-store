@@ -25,11 +25,11 @@ export default function NavBar(props: {
   return (
     <>
       <div
-        class={`relative border-y py-2 justify-between w-full h-[45px] flex items-center bg-[${
+        class={`relative border-y py-2 px-6 justify-between w-full h-[45px] flex items-center bg-[${
           props.darkTheme ? '#000000' : '#ffffff'
         }]`}
       >
-        <div class='pl-4 flex flex-row space-x-4 items-center'>
+        <div class='flex flex-row space-x-4 items-center'>
           <div class='md:hidden flex'>
             <div
               class='opacity-100 mr-4 cursor-pointer'

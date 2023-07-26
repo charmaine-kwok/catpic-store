@@ -6,7 +6,7 @@ export default function ThemeToggleIcon(props: {
   darkTheme: boolean;
 }) {
   return (
-    <div class='pr-4 flex flex-row space-x-4'>
+    <div class='flex flex-row space-x-4'>
       <div
         onClick={() => {
           props.toggleTheme();
