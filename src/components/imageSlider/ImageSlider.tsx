@@ -25,8 +25,8 @@ export default function ImageSlider(props: {
   let timer = setInterval(goToNext, 4000);
 
   return (
-    <div class='imageSlider flex-col h-full w-full justify-start'>
-      <div class='overflow-hidden relative imageSlider max-h-[380px] h-[80vh] max-w-[500px] w-[80vw]'>
+    <div class='flex flex-col items-center justify-start my-4'>
+      <div class='flex items-center overflow-hidden relative max-h-[300px] mobile:max-h-[380px] h-[80vh] max-w-[500px] w-[80vw]'>
         <div
           onTransitionEnd={() => {
             if (direction()) {
@@ -50,7 +50,7 @@ export default function ImageSlider(props: {
               timer = setInterval(goToNext, 4000);
             }, 4000);
           }}
-          class={`relative justify-start slider flex duration-1000 -translate-x-[100%]
+          class={`slider flex justify-start duration-1000 -translate-x-[100%]
           ${isTransition() ? 'transition-all' : 'transition-none'}`}
           classList={{
             '-translate-x-[200%]': isTranslate() && direction(),
