@@ -1,4 +1,4 @@
-import july from '../assets/catpics/july.jpg';
+import july from '../assets/catpics/actual/july.jpg';
 import CatDetails from '../components/cats/CatDetails';
 
 export default function July() {

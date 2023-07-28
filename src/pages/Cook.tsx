@@ -1,4 +1,4 @@
-import cook from '../assets/catpics/cook.jpg';
+import cook from '../assets/catpics/actual/cook.jpg';
 import CatDetails from '../components/cats/CatDetails';
 
 export default function Cook() {

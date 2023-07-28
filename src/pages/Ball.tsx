@@ -1,4 +1,4 @@
-import ball from '../assets/catpics/ball.jpg';
+import ball from '../assets/catpics/actual/ball.jpg';
 import CatDetails from '../components/cats/CatDetails';
 
 export default function Ball() {

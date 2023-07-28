@@ -1,7 +1,7 @@
-import straight from '../assets/catpics/straight.jpg';
-import cook from '../assets/catpics/cook.jpg';
-import ball from '../assets/catpics/ball.jpg';
-import july from '../assets/catpics/july.jpg';
+import straight from '../assets/catpics/actual/straight.jpg';
+import cook from '../assets/catpics/actual/cook.jpg';
+import ball from '../assets/catpics/actual/ball.jpg';
+import july from '../assets/catpics/actual/july.jpg';
 import ImageSlider from '../components/imageSlider/ImageSlider';
 
 export default function Home() {

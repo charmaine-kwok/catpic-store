@@ -1,4 +1,4 @@
-import straight from '../assets/catpics/straight.jpg';
+import straight from '../assets/catpics/actual/straight.jpg';
 import CatDetails from '../components/cats/CatDetails';
 
 export default function Straight() {
