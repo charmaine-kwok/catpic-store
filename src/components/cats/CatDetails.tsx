@@ -8,10 +8,10 @@ export default function CatDetails(props: {
 }) {
   return (
     <div class='grid grid-cols-1 md:grid-cols-2 justify-center items-center h-[100%]'>
-      <div class='flex justify-center p-8'>
+      <div class='flex justify-center items-center p-8 w-full h-full'>
         <img
           src={props.pic}
-          class='md:h-auto h-[30vh] md:w-auto w-[40vh]'
+          class='lg:h-[56vh] md:h-[45vh] h-[30vh] lg:w-[75vh] md:w-[60vh] w-[40vh]'
           alt={`Picture of ${props.catName}`}
         />
       </div>
