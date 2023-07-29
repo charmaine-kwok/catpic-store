@@ -7,10 +7,6 @@ const LazyImage = (props: {
 }) => {
   const [loaded, setLoaded] = createSignal(false);
 
-  const handleImageLoad = () => {
-    setLoaded(true);
-  };
-
   return (
     <div>
       {!loaded() && (
@@ -18,7 +14,7 @@ const LazyImage = (props: {
           src={props.smallPic}
           alt={`Loading picture of ${props.name}`}
           class='w-full h-full'
-          style={{ filter: 'blur(10px)' }}
+          classList={{ 'blur-md': !loaded() }}
         />
       )}
       <img
@@ -26,7 +22,7 @@ const LazyImage = (props: {
         alt={`Picture of ${props.name}`}
         class='w-full h-full hover:opacity-20 group-hover:opacity-20'
         style={{ display: loaded() ? 'block' : 'none' }}
-        onLoad={handleImageLoad}
+        onLoad={() => setLoaded(true)}
       />
     </div>
   );
