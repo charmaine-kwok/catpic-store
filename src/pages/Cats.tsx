@@ -25,7 +25,7 @@ export default function Cats() {
           name='Cook'
           actualPic={cook}
           smallPic={smallCook}
-          desc={'This is Cook! \n She is a good meow!'}
+          desc={'This is Cook!\nShe is a good meow!'}
         />
         <CatItem
           name='Ball'
