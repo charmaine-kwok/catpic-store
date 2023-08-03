@@ -7,7 +7,7 @@ import {
   Phone,
   Email,
 } from '../assets/icons/Icons';
-import toTop from './functions/toTop';
+import toTop from '../functions/toTop';
 
 export default function Footer() {
   return (

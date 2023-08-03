@@ -1,5 +1,5 @@
 import { UpArrow } from '../assets/icons/Icons';
-import toTop from './functions/toTop';
+import toTop from '../functions/toTop';
 
 export default function ToTopButton(props: { darkTheme: boolean }) {
   return (
