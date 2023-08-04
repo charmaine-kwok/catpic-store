@@ -38,7 +38,10 @@ function App() {
         <Routers />
       </div>
 
-      <div class={`bg-slate-${darkTheme() ? 700 : 300}`}>
+      <div
+        class={'bg-slate-300 mobile:mt-8 mt-4'}
+        classList={{ 'bg-slate-700': darkTheme() }}
+      >
         <Footer />
       </div>
       {toTopButton() && <ToTopButton darkTheme={darkTheme()} />}
