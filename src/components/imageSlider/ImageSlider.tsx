@@ -26,7 +26,7 @@ export default function ImageSlider(props: {
 
   return (
     <div class='flex flex-col items-center justify-start my-4'>
-      <div class='flex items-center overflow-hidden relative max-h-[300px] mobile:max-h-[380px] h-[80vh] max-w-[500px] w-[80vw]'>
+      <div class='flex items-center overflow-hidden relative mobile:max-h-[300px] max-h-[380px] h-[80vh] max-w-[500px] w-[80vw]'>
         <div
           onTransitionEnd={() => {
             if (direction()) {
