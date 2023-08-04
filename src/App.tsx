@@ -3,7 +3,6 @@ import { createSignal, createEffect } from 'solid-js';
 import Routers from './components/Routers';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer';
-import Newsletter from './components/Newsletter';
 import ToTopButton from './components/ToTopButton';
 
 function App() {
@@ -38,13 +37,7 @@ function App() {
       >
         <Routers />
       </div>
-      <div
-        class={`flex flex-col items-center justify-center space-y-4 my-10 py-8 ${
-          !darkTheme() ? 'bg-yellow-100' : 'bg-blue-600'
-        }`}
-      >
-        <Newsletter />
-      </div>
+
       <div class={`bg-slate-${darkTheme() ? 700 : 300}`}>
         <Footer />
       </div>
