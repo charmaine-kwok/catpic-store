@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <div class='flex justify-center my-4'>
-        <p class='whitespace-pre-wrap mx-4'>
+        <p class='whitespace-pre-wrap text-justify px-8'>
           Welcome to the delightful world of four charming felines - Straight,
           Cook, Ball, and July!\nThis page is dedicated to celebrating the
           unique personalities and lovable quirks of these four fabulous
