@@ -93,7 +93,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div class='flex md:justify-end justify-center md:pr-8 pr-0 mt-10'>
+      <div class='flex md:justify-end justify-center md:pr-8 pr-0 mt-10 pb-6'>
         <p>
           Copyright @ {new Date().getFullYear()} C. Kwok. All rights reserved.
         </p>
