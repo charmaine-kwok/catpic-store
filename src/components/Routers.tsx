@@ -8,6 +8,7 @@ const Straight = lazy(() => import('../pages/Straight'));
 const Cook = lazy(() => import('../pages/Cook'));
 const Ball = lazy(() => import('../pages/Ball'));
 const July = lazy(() => import('../pages/July'));
+const NotFound = lazy(() => import('../pages/NotFound'));
 
 export default function Routers() {
   return (
@@ -18,6 +19,7 @@ export default function Routers() {
       <Route path='/cats/Ball' component={Ball} />
       <Route path='/cats/July' component={July} />
       <Route path='/cats' component={Cats} />
+      <Route path='*' component={NotFound} />
     </Routes>
   );
 }
