@@ -25,7 +25,7 @@ function App() {
   });
   return (
     <div
-      class='justify-start flex flex-col w-[100vw] h-full'
+      class='justify-start flex flex-col w-[100vw] h-full text-black'
       classList={{ 'bg-black': darkTheme(), 'text-white': darkTheme() }}
     >
       <div class='fixed top-0 w-full z-[10]'>
