@@ -25,8 +25,8 @@ export default function ImageSlider(props: {
   let timer = setInterval(goToNext, 4000);
 
   return (
-    <div class='flex flex-col items-center justify-start my-4'>
-      <div class='flex items-center overflow-hidden relative mobile:max-h-[300px] max-h-[380px] h-[80vh] max-w-[500px] w-[80vw]'>
+    <div class='flex justify-center my-8'>
+      <div class='flex z-0 rounded-3xl overflow-hidden relative aspect-[4/3] mobile:w-[80vw] w-[70vw] md:w-[60vw] lg:w-[35vw] max-w-[700px]'>
         <div
           onTransitionEnd={() => {
             if (direction()) {
@@ -61,7 +61,7 @@ export default function ImageSlider(props: {
             {(item) => (
               <img
                 src={item.pic}
-                class='w-[100%] h-[100%] rounded-3xl object-cover'
+                class='w-full h-full rounded-3xl'
                 alt={`Picture of ${item.name}`}
               />
             )}
