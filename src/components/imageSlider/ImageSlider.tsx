@@ -1,4 +1,4 @@
-import { createSignal, For } from 'solid-js';
+import { createSignal, For, onMount, onCleanup } from 'solid-js';
 
 import ImageSliderArrows from './ImageSliderArrows';
 
@@ -12,17 +12,33 @@ export default function ImageSlider(props: {
   const [isTransition, setIsTransition] = createSignal(true);
   const [direction, setDirection] = createSignal(true);
 
+  onMount(() => setTimeout(() => autoNext(), 4000));
+  onCleanup(() => clearInterval(timer));
+
   function goToNext() {
+    resetAutoSlide();
     setIsTranslate(true);
     setDirection(true);
   }
 
   function goToPrev() {
+    resetAutoSlide();
     setIsTranslate(true);
     setDirection(false);
   }
 
-  let timer = setInterval(goToNext, 4000);
+  let timer: NodeJS.Timeout;
+  function autoNext() {
+    timer = setInterval(() => {
+      setIsTranslate(true);
+      setDirection(true);
+    }, 4000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(timer);
+    autoNext();
+  }
 
   return (
     <div class='flex justify-center my-8'>
@@ -45,10 +61,6 @@ export default function ImageSlider(props: {
             setIsTransition(false);
             setIsTranslate(false);
             setTimeout(() => setIsTransition(true));
-            clearInterval(timer);
-            setTimeout(() => {
-              timer = setInterval(goToNext, 4000);
-            }, 4000);
           }}
           class={`slider flex justify-start duration-1000 -translate-x-[100%]
           ${isTransition() ? 'transition-all' : 'transition-none'}`}
