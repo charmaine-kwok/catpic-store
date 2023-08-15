@@ -11,8 +11,9 @@ export default function ImageSlider(props: {
   const [isTranslate, setIsTranslate] = createSignal(false);
   const [isTransition, setIsTransition] = createSignal(true);
   const [direction, setDirection] = createSignal(true);
+  const [goBack, setGoBack] = createSignal(false);
 
-  onMount(() => setTimeout(() => autoNext(), 4000));
+  onMount(() => autoNext());
   onCleanup(() => clearInterval(timer));
 
   function goToNext() {
@@ -22,8 +23,13 @@ export default function ImageSlider(props: {
   }
 
   function goToPrev() {
+    if (isTranslate()) {
+      setIsTranslate(false);
+      setGoBack(true);
+    } else {
+      setIsTranslate(true);
+    }
     resetAutoSlide();
-    setIsTranslate(true);
     setDirection(false);
   }
 
@@ -45,19 +51,22 @@ export default function ImageSlider(props: {
       <div class='flex z-0 rounded-3xl overflow-hidden relative aspect-[4/3] mobile:w-[80vw] w-[70vw] md:w-[60vw] lg:w-[35vw] max-w-[700px]'>
         <div
           onTransitionEnd={() => {
-            if (direction()) {
-              document
-                .querySelector('.slider')!
-                .appendChild(
-                  document.querySelector('.slider')!.firstElementChild as Node
-                );
-            } else {
-              document
-                .querySelector('.slider')!
-                .prepend(
-                  document.querySelector('.slider')!.lastElementChild as Node
-                );
+            if (!goBack()) {
+              if (direction()) {
+                document
+                  .querySelector('.slider')!
+                  .appendChild(
+                    document.querySelector('.slider')!.firstElementChild as Node
+                  );
+              } else {
+                document
+                  .querySelector('.slider')!
+                  .prepend(
+                    document.querySelector('.slider')!.lastElementChild as Node
+                  );
+              }
             }
+            setGoBack(false);
             setIsTransition(false);
             setIsTranslate(false);
             setTimeout(() => setIsTransition(true));
